@@ -4,11 +4,9 @@ using System.Text;
 Console.OutputEncoding = Encoding.UTF8;
 
 string ipAddress = "192.168.31.183";
-Console.Write("Enter the port number:");
-int port = int.Parse(Console.ReadLine());
 
 using var client = new TcpClient();
-await client.ConnectAsync(ipAddress, port);
+await client.ConnectAsync(ipAddress, 27001);
 Console.WriteLine("Connected");
 
 using var stream = client.GetStream();
